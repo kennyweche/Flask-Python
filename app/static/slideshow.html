@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.mySlides {display:none;}
+.header{color:red;}
+.head{outline:none;}
+.head img{width:640px; height:640px;}
+</style>
+<body> 
+
+<h2 class="header">Automatic Slideshow</h2>
+
+<div class="head" style="max-width:500px">
+  <img class="mySlides" src="img/addi.jpg" style="width:100%">
+  <img class="mySlides" src="img/dabonem.jpg" style="width:100%">
+  <img class="mySlides" src="img/tommylee.jpg" style="width:100%">
+</div>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1];  
+    setTimeout(carousel, 4000); // Change image every 2 seconds
+}
+</script>
+
+</body>
+</html>
